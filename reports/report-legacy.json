@@ -1,0 +1,63 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "projects;a-user-should-be-able-to-retrieve-all-projects",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "A user should be able to retrieve all projects",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I have valid credentials",
+            "match": {
+              "location": "features\\support\\steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 364399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I execute a \"GET\" request to \"projects.json\" endpoint",
+            "match": {
+              "location": "features\\support\\steps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1158399899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the status code should be 200 \"OK\"",
+            "match": {
+              "location": "features\\support\\steps.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2960599
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "projects",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Projects",
+    "tags": [],
+    "uri": "features\\projects.feature"
+  }
+]
