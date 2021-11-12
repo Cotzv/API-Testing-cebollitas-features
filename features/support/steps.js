@@ -25,10 +25,10 @@ Given(/^I have a (.*) payload and (.*) feature$/, async function (payload, featu
         case 'Categories':
             data = payloads.Categories[payload]
             break;
-        case 'PagesById':
+        case 'Pages':
             data = payloads.PagesById[payload]
             break;
-        case 'BlocksById':
+        case 'Blocks':
             data = payloads.BlocksById[payload]
             break;
     }
@@ -68,7 +68,37 @@ Then(/^the error code should be (.*)$/, function (errorMessage) {
     }
 })
 
-Then(/^the post|block|category is created|updated|deleted$/, function(){
+Then(/^the post|block|category|page is created|updated|deleted$/, function(){
     expect(_response.data.id).not.to.be.undefined
     this.id = _response.data.id;
+})
+
+Then(/^the response should be an array$/, function () {
+    expect(_response.data).to.be.an('array');
+})
+
+Then(/^the response should be an object$/, function () {
+    expect(_response.data).to.be.an('object');
+})
+
+Then(/^a page has publish status$/, function () {
+    if (Array.isArray(_response.data)) {
+        if (_response.data.length > 0) {
+            expect(_response.data[0].status).to.equal('publish');
+        }
+    } else {
+        expect(_response.data.status).to.equal('publish');
+    }
+})
+
+Then(/^the page is validated$/, function () {
+    expect(_response.data).to.be.jsonSchema(schema);
+})
+
+Then(/^the response should be an empty array$/, function () {
+    expect(_response.data.length).to.equal(0);
+})
+
+Then(/^the response should have 10 objects as maximum$/, function () {
+    expect(_response.data.length).to.be.at.most(10);
 })
