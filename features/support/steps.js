@@ -17,6 +17,11 @@ Given(/^I have valid credentials$/, function () {
     validCredentials = true;
 })
 
+Given(/^I have invalid credentials$/, function () {
+    validCredentials = false;
+})
+
+
 Given(/^I have a (.*) payload and (.*) feature$/, async function (payload, feature) {
 
     switch (feature) {
