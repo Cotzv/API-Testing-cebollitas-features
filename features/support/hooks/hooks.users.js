@@ -2,67 +2,49 @@ import { BeforeAll, Before, AfterAll, After, BeforeStep, AfterStep } from "@cucu
 import { expect } from 'chai';
 import HttpRequestManager from '../../../src/common/api/http.request.manager';
 import endpoints from '../../../src/resources/endpoints.json';
-import payloads from '../../../src/resources/payloads.json'
-
-BeforeAll({ tags: "@CRUD" }, function () {
-    console.log(' -- before all scenarios --')
-})
+import payloads from '../../../src/resources/payloads.json';
+import loggers from '../../../utils/loggers';
 
 Before({ tags: "@Users" }, async function () {
     let _response = ''
+    let _error = '';
 
-    await HttpRequestManager.makeRequest('POST', endpoints.users, payloads.UserById.POST)
+    await HttpRequestManager.makeRequest('POST', endpoints.users, payloads.Users.POST)
         .then(function (response) {
             expect(response.status).to.be.equal(201)
             expect(response.statusText).to.be.equal('Created')
             _response = response
+            loggers.debug("Status: " + response.status);
+            loggers.debug("StatusText: " + response.statusText)
         })
         .catch(function (error) {
-            console.log(error)
-            throw error
+            _error = error;
+            expect(_error.response.status).to.equal(500);
+            expect(_error.response.data.code).to.equal('existing_user_login');
+            loggers.error("Status: " + _error.response.status);
+            loggers.error("Error Code: " + _error.response.data.code);
         })
 
     this.id = _response.data.id
-    console.log(`user ${this.id} created`)
-})
-
-BeforeStep({ tags: "@CRUD" }, function () {
-    console.log(' -- before step --')
-})
-
-AfterAll({ tags: "@CRUD" }, function () {
-    console.log(' -- after all scenarios --')
+    loggers.debug(`user ${this.id} created`)
 })
 
 After({ tags: "@Users" }, async function () {
     let _deleteId = this.id
+    let _error = '';
 
-    await HttpRequestManager.makeRequest('DELETE_USER', endpoints.userById.replace('{id}', _deleteId), payloads.UserById.DELETE_USER)
+    await HttpRequestManager.makeRequest('DELETE_USER', endpoints.userById.replace('{id}', _deleteId), payloads.Users.DELETE_USER)
         .then(function (response) {
             expect(response.status).to.equal(200)
             expect(response.statusText).to.equal('OK')
-            console.log(`user ${_deleteId} deleted`)
+            loggers.debug("Status: " + response.status);
+            loggers.debug("StatusText: " + response.statusText)
+            loggers.debug(`user ${_deleteId} deleted`)
         })
         .catch(function (error) {
-            console.log(error)
-            throw error
+            _error = error;
+            expect(_error.response.data.code).to.equal('existing_user_login');
+            loggers.error("Status: " + _error.response.status);
+            loggers.error("Error Code: " + _error.response.data.code);
         })
-})
-/*
-After({ tags: "@PUT" }, async function () {
-    let _putId = this.id
-    await HttpRequestManager.makeRequest('DELETE', endpoints.userById.replace('{id}', _putId))
-        .then(function (response) {
-            expect(response.status).to.equal(200)
-            expect(response.statusText).to.equal('OK')
-            console.log(`user ${_putId} deleted`)
-        })
-        .catch(function (error) {
-            console.log(error)
-            throw error
-        })
-})*/
-
-AfterStep({ tags: "@CRUD" }, function () {
-    console.log(' -- after step --')
 })

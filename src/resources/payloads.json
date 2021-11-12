@@ -1,5 +1,5 @@
 {
-    "UserById": {
+    "Users": {
         "POST": {
             "username": "test",
             "email": "test@no-reply.com",
@@ -15,8 +15,29 @@
                 "reassign": ""
             }
         },
-        "NEGATIVE_PUT": {
-            "nickname": "-5"
+        "NegativeDescription": {
+            "description": "-5"
+        },
+        "FloatingDescription": {
+            "description": "5.1"
+        },
+        "StringDescription": {
+            "description": "description"
+        },
+        "SpecialCharactersDescription": {
+            "description": "$%#/"
+        },
+        "NegativeLocale": {
+            "locale": "-5"
+        },
+        "FloatingLocale": {
+            "locale": "5.1"
+        },
+        "StringLocale": {
+            "locale": "description"
+        },
+        "SpecialCharactersLocale": {
+            "locale": "$%#/"
         }
     },
     "Posts": {
@@ -54,9 +75,9 @@
         }
     },
     "BlocksById": {
-        "POST": { 
+        "POST": {
             "title": "Block Created",
-            "status": "publish" 
+            "status": "publish"
         },
         "DELETE_BLOCKS": {
             "data": {

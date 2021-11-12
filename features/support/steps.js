@@ -7,17 +7,21 @@ import errors from "../../src/resources/errors.json";
 let validCredentials = false;
 var _response = '';
 let data = '';
-let _error= '';
+let _error = '';
 
 Given(/^I have valid credentials$/, function () {
     validCredentials = true;
 })
 
+Given(/^I have invalid credentials$/, function () {
+    validCredentials = true;
+})
+
 Given(/^I have a (.*) payload and (.*) feature$/, async function (payload, feature) {
 
-    switch(feature){
-        case 'UserById':
-            data = payloads.UserById[payload]
+    switch (feature) {
+        case 'User':
+            data = payloads.Users[payload]
             break;
         case 'Posts':
             data = payloads.Posts[payload]
@@ -37,9 +41,9 @@ Given(/^I have a (.*) payload and (.*) feature$/, async function (payload, featu
 When(/^I execute a (.*) request to (.*) endpoint$/, { timeout: 60 * 1000 }, async function (verb, endpoint) {
     let _endpoint = ''
 
-    if(endpoint.includes('{id}')){
+    if (endpoint.includes('{id}')) {
         _endpoint = endpoint.replace('{id}', this.id);
-    }else{
+    } else {
         _endpoint = endpoint;
     }
     await HttpRequestManager.makeRequest(verb, _endpoint, data, validCredentials)
@@ -47,11 +51,11 @@ When(/^I execute a (.*) request to (.*) endpoint$/, { timeout: 60 * 1000 }, asyn
             _response = response;
         })
         .catch(function (error) {
-            _error= error;
+            _error = error;
         })
 })
 
-Then(/^the status code should be (\d+) (.*)$/, function(statusCode, statusText){
+Then(/^the status code should be (\d+) (.*)$/, function (statusCode, statusText) {
     if (_error) {
         expect(_error.response.status).to.equal(statusCode);
         expect(_error.response.statusText).to.equal(statusText);
@@ -68,7 +72,7 @@ Then(/^the error code should be (.*)$/, function (errorMessage) {
     }
 })
 
-Then(/^the post|block|category is created|updated|deleted$/, function(){
+Then(/^the post|block|category is created|updated|deleted$/, function () {
     expect(_response.data.id).not.to.be.undefined
     this.id = _response.data.id;
 })

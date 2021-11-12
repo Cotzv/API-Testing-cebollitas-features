@@ -1,27 +1,29 @@
 {
-  "name": "cucumber-js-test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/report.html",
-    "test-posts": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportPosts.html --tags @Posts",
-    "test-autosaves": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportAutosaves.html --tags @Autosaves",
-    "test-categories": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportCategories.html --tags @Categories"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.24.0",
-    "chai": "^4.3.4"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
-    "@babel/register": "^7.16.0",
-    "@cucumber/cucumber": "^7.3.1",
-    "@cucumber/pretty-formatter": "^1.0.0-alpha.1"
-  }
+    "name": "cucumber-js-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/report.html",
+        "test-posts": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportPosts.html --tags @Posts",
+        "test-autosaves": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportAutosaves.html --tags @Autosaves",
+        "test-categories": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportCategories.html --tags @Categories",
+        "test-users": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportCategories.html --tags @Users"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.24.0",
+        "chai": "^4.3.4",
+        "winston": "^3.3.3"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.16.0",
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.0",
+        "@babel/register": "^7.16.0",
+        "@cucumber/cucumber": "^7.3.1",
+        "@cucumber/pretty-formatter": "^1.0.0-alpha.1"
+    }
 }
