@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format message:./reports/report.json",
-    "test-posts": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format message:./reports/report.json --tags @Posts",
-    "test-autosaves": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format message:./reports/report.json --tags @Autosaves",
-    "test-categories": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format message:./reports/report.json --tags @Categories"
+    "test": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/report.html",
+    "test-posts": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportPosts.html --tags @Posts",
+    "test-autosaves": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportAutosaves.html --tags @Autosaves",
+    "test-categories": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportCategories.html --tags @Categories"
   },
   "keywords": [],
   "author": "",
