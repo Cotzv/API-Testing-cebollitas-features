@@ -38,6 +38,15 @@ pipeline {
             }
           }          
         }
+        stage('Pages feature') {
+          steps {
+            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+              nodejs('NodeJS') {
+                sh 'npm run test-pages'
+              }
+            }
+          }          
+        }
       }
     }
     stage('Tests Reports') {
@@ -56,7 +65,12 @@ pipeline {
           steps {
             publishHTML(allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'reports/', reportFiles: 'reportCategories.html', reportName: 'Categories Report')
             }
-        }      
+        }    
+        stage('Pages feature') {
+          steps {
+            publishHTML(allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'reports/', reportFiles: 'reportPages.html', reportName: 'Pages Report')
+            }
+        }     
       }
     }
   }
