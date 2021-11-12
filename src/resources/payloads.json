@@ -4,7 +4,9 @@
             "username": "test",
             "email": "test@no-reply.com",
             "password": "test",
-            "roles": ["administrator"]
+            "roles": [
+                "administrator"
+            ]
         },
         "PUT": {
             "description": "This is a PUT test"
@@ -54,15 +56,23 @@
         }
     },
     "BlocksById": {
-        "POST": { 
+        "POST": {
             "title": "Block Created",
-            "status": "publish" 
+            "status": "publish"
         },
         "DELETE_BLOCKS": {
             "data": {
                 "force": "true",
                 "reassign": ""
             }
+        }
+    },
+    "Pages": {
+        "POST": {
+            "title": "Hello world {value}"
+        },
+        "PUT": {
+            "title": "Hello world {value} updated"
         }
     }
 }

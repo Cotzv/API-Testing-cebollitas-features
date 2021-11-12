@@ -1,7 +1,11 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from 'chai';
 import HttpRequestManager from '../../src/common/api/http.request.manager';
-import payloads from '../../src/resources/payloads.json'
+import payloads from '../../src/resources/payloads.json';
+import schema from '../../src/schemas/schema.json';
+const chai = require('chai');
+chai.use(require('chai-json-schema-ajv'));
+
 import errors from "../../src/resources/errors.json";
 
 let validCredentials = false;
@@ -71,4 +75,15 @@ Then(/^the error code should be (.*)$/, function (errorMessage) {
 Then(/^the post|block|category is created|updated|deleted$/, function(){
     expect(_response.data.id).not.to.be.undefined
     this.id = _response.data.id;
+})
+
+Then(/^the page is validated$/, function () {
+    // const _schema = {
+    //     type: "object",
+    //     required: ['id'],
+    //     properties: {
+    //         id: { type: 'integer' },
+    //     }
+    // }
+    expect(_response.data).to.be.jsonSchema(schema);
 })
