@@ -1,0 +1,16 @@
+{
+    "ValidCredentials": {
+        "baseURL": "http://wordpress.test",
+        "auth": {
+            "username": "admin",
+            "password": "admin"
+        }
+    },
+    "InvalidCredentials": {
+        "baseURL": "http://wordpress.test",
+        "auth": {
+            "username": "noadmin",
+            "password": "noadmin"
+        }
+    }
+}

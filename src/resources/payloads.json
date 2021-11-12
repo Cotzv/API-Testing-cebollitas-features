@@ -1,0 +1,51 @@
+{
+    "Users": {
+        "POST": {
+            "username": "test",
+            "email": "test@no-reply.com",
+            "password": "test",
+            "roles": ["administrator"]
+        },
+        "PUT": {
+            "description": "This is a PUT test"
+        },
+        "DELETE_USER": {
+            "data": {
+                "force": "true",
+                "reassign": ""
+            }
+        },
+        "NegativeDescription": {
+            "description": "-5"
+        },
+        "FloatingDescription": {
+            "description": "5.1"
+        },
+        "StringDescription": {
+            "description": "description"
+        },
+        "SpecialCharactersDescription": {
+            "description": "$%#/"
+        }
+    },
+    "PostsById": {
+        "POST": {
+            "title": "My new post",
+            "status": "publish"
+        },
+        "UPDATE": {
+            "title": "updating"
+        },
+        "InvalidUpdate": {
+            "title": ""
+        },
+        "InvalidUpdateNumber": {
+            "title": "-362"
+        }
+    },
+    "Autosaves": {
+        "POST": {
+            "title": "New Autosave"
+        }
+    }
+}

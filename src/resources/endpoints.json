@@ -1,0 +1,7 @@
+{
+    "posts" : "posts",
+    "postsById" : "posts/{id}",
+    "autosaves": "posts/{parent}/autosaves",
+    "users": "users",
+    "userById": "users/{id}"
+}
