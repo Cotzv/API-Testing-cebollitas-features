@@ -8,5 +8,12 @@ pipeline {
         }
       }
     }
+    stage('Run Tests') {
+      steps {
+        nodejs('NodeJS') {
+          sh 'npm run test-posts'
+        }
+      }
+    }
   }
 }
