@@ -15,7 +15,7 @@ let _error = '';
 
 Given(/^I have valid credentials$/, function () {
     validCredentials = true;
-})
+});
 
 Given(/^I have invalid credentials$/, function () {
     validCredentials = false;
@@ -69,7 +69,7 @@ Then(/^the status code should be (\d+) (.*)$/, function (statusCode, statusText)
         expect(_response.status).to.equal(statusCode);
         expect(_response.statusText).to.equal(statusText);
     }
-})
+});
 
 Then(/^the error code should be (.*)$/, function (errorMessage) {
     if (_error) {

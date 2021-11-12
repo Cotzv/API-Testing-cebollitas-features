@@ -33,6 +33,15 @@
             "title": ""
         }
     },
+    "BlocksById": {
+        "POST": { "title": "Block Created", "status": "publish" },
+        "InvalidUpdate": {
+            "title": ""
+        },
+        "InvalidUpdateNumber": {
+            "title": "-600"
+        }
+    },
     "Autosaves": {
         "POST": {
             "title": "New Autosave"
