@@ -60,4 +60,12 @@ pipeline {
       }
     }
   }
+  post {
+    always {
+      mail(to: 'sthrhll7@gmail.com', subject: "Build report: ${env.BUILD_DISPLAY_NAME}", body: "Build report: ${env.BUILD_URL} -- Artifacts: ${env.RUN_ARTIFACTS_DISPLAY_URL}")
+    }
+    failure {
+      mail(to: 'sthrhll7@gmail.com', subject: "Artifacts - (${env.BUILD_DISPLAY_NAME})", body: "Artifacts  ${env.RUN_ARTIFACTS_DISPLAY_URL} results")
+    }
+  }
 }
