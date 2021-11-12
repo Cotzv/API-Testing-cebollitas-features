@@ -2,6 +2,10 @@
     "posts" : "posts",
     "postsById" : "posts/{id}",
     "autosaves": "posts/{parent}/autosaves",
+    "categories": "categories",
+    "categoriesById": "categories/{id}",
     "users": "users",
-    "userById": "users/{id}"
+    "userById": "users/{id}",
+    "blocks": "blocks",
+    "blocksById": "blocks/{id}"
 }

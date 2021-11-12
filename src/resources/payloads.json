@@ -19,24 +19,50 @@
             "nickname": "-5"
         }
     },
-    "PostsById": {
+    "Posts": {
         "POST": {
             "title": "My new post",
             "status": "publish"
         },
-        "UPDATE": {
+        "PUT": {
             "title": "updating"
         },
         "InvalidUpdate": {
             "title": ""
-        },
-        "InvalidUpdateNumber": {
-            "title": "-362"
         }
     },
     "Autosaves": {
         "POST": {
             "title": "New Autosave"
+        }
+    },
+    "Categories": {
+        "POST": {
+            "name": "My new category"
+        },
+        "PUT": {
+            "name": "Category updated"
+        },
+        "DELETE_CATEGORY": {
+            "data": {
+                "force": "true",
+                "reassign": ""
+            }
+        },
+        "InvalidUpdate": {
+            "name": ""
+        }
+    },
+    "BlocksById": {
+        "POST": { 
+            "title": "Block Created",
+            "status": "publish" 
+        },
+        "DELETE_BLOCKS": {
+            "data": {
+                "force": "true",
+                "reassign": ""
+            }
         }
     }
 }
