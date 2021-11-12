@@ -40,5 +40,24 @@ pipeline {
         }
       }
     }
+    stage('Tests Reports') {
+      parallel {
+        stage('Autosaves feature') {
+          steps {
+            publishHTML(allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'reports/', reportFiles: 'reportAutosaves.html', reportName: 'Autosaves Report')
+            }
+        } 
+        stage('Posts feature') {
+          steps {
+            publishHTML(allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'reports/', reportFiles: 'reportPosts.html', reportName: 'Posts Report')
+            }
+        }   
+        stage('Categories feature') {
+          steps {
+            publishHTML(allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'reports/', reportFiles: 'reportCategories.html', reportName: 'Categories Report')
+            }
+        }      
+      }
+    }
   }
 }
