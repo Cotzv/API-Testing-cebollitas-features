@@ -1,13 +1,13 @@
 {
     "ValidCredentials": {
-        "baseURL": "http://wordpress.test",
+        "baseURL": "http://192.168.33.60:4040",
         "auth": {
             "username": "admin",
-            "password": "admin"
+            "password": "zjFs aQar 2BvN KLrH ccQL Onth"
         }
     },
     "InvalidCredentials": {
-        "baseURL": "http://wordpress.test",
+        "baseURL": "http://192.168.33.60:4040",
         "auth": {
             "username": "noadmin",
             "password": "noadmin"
