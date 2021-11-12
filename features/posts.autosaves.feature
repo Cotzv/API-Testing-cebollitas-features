@@ -13,4 +13,4 @@ Scenario: A user shouldn't be able to retrieve an autosave with invalid id
     When I execute a GET request to posts/{id}/autosaves/0 endpoint
     Then the status code should be 404 Not Found
         And the error code should be rest_no_route
-        
+              

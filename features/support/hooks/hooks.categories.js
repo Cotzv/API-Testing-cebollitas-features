@@ -4,7 +4,7 @@ import HttpRequestManager from "../../../src/common/api/http.request.manager";
 import endpoints from "../../../src/resources/endpoints.json";
 import payloads from "../../../src/resources/payloads.json";
 
-Before({tags: "@RetrieveById-Categories or @Update-Categories or @Delete-Categories or @NegativeCategories"}, async function(){
+Before({tags: "@RetrieveById-Categories or @Update-Categories or @NegativeCategories"}, async function(){
     let _response= '';
     await HttpRequestManager.makeRequest('POST', endpoints.categories, payloads.Categories.POST)
     .then(function(response){

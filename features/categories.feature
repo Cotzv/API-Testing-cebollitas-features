@@ -35,17 +35,6 @@ Scenario Outline: A user should be able to update a category
         | payload | feature       |
         | PUT     | Categories    |
 
-#@Delete-Categories @Categories-CRUD
-#Scenario Outline: A user should be able to delete a category
-#    Given I have valid credentials
-#        And I have a <payload> payload and <feature> feature
-#    When I execute a DELETE_CATEGORY request to categories/{id} endpoint
-#    Then the category is deleted
-#       And the status code should be 200 OK
-#    Examples:
-#        | payload           | feature       |
-#        | DELETE_CATEGORY   | Categories    |
-
 @NegativeCategories @UpdateCategoriesNegative
 Scenario Outline: A user shouldn't be able to update a category with invalid values
     Given I have valid credentials
