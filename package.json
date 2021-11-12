@@ -8,7 +8,7 @@
     "test-posts": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportPosts.html --tags @Posts",
     "test-autosaves": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportAutosaves.html --tags @Autosaves",
     "test-categories": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportCategories.html --tags @Categories",
-    "test-pages": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportCategories.html --tags @Pages"
+    "test-pages": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format html:./reports/reportPages.html --tags @Pages"
   },
   "keywords": [],
   "author": "",
