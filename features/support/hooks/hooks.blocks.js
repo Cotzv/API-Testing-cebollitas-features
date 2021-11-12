@@ -28,11 +28,9 @@ Before(
                 _response = response;
             })
             .catch(function (error) {
-                console.log(error);
                 throw error;
             });
 
         this.id = _response.data.id;
-        console.log(`post ${this.id} created`);
     }
 );
