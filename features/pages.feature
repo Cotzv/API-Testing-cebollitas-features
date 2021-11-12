@@ -1,14 +1,11 @@
 @Pages
 Feature: Pages
 
-    #   Background:
-    #     Given I have a payload for POST
-    #     And I have a payload for PUT
-
+      Background:
+        Given I have valid credentials
 
     @RetrieveAll-Pages @Pages-CRUD
     Scenario: Verify that all published pages are shown
-        Given I have valid credentials
         When I execute a GET request to pages endpoint
         Then the status code should be 200 OK
         And the response should be an array
@@ -16,14 +13,12 @@ Feature: Pages
 
     @RetrieveById-Pages @Pages-CRUD
     Scenario: Verify that a page is shown
-        Given I have valid credentials
         When I execute a GET request to pages/{id} endpoint
         Then the status code should be 200 OK
         And the response should be an object
 
     @Create-Pages @Pages-CRUD
     Scenario Outline: Verify that a page is created
-        Given I have valid credentials
         And I have a <payload> payload and <feature> feature
         When I execute a POST request to pages endpoint
         Then the status code should be 201 Created
@@ -36,7 +31,6 @@ Feature: Pages
 
     @Update-Pages @Pages-CRUD
     Scenario Outline: Verify that a page is updated with a PUT request
-        Given I have valid credentials
         And I have a <payload> payload and <feature> feature
         When I execute a PUT request to pages/{id} endpoint
         Then the status code should be 200 OK
@@ -48,7 +42,6 @@ Feature: Pages
 
     @Update-Pages @Pages-CRUD
     Scenario Outline: Verify that a page is updated with a POST request
-        Given I have valid credentials
         And I have a <payload> payload and <feature> feature
         When I execute a POST request to pages/{id} endpoint
         Then the status code should be 200 OK
@@ -60,7 +53,6 @@ Feature: Pages
 
     @Delete-Pages @Pages-CRUD
     Scenario: Verify that a page is deleted
-        Given I have valid credentials
         When I execute a DELETE request to pages/{id} endpoint
         Then the status code should be 200 OK
         And the response should be an object
