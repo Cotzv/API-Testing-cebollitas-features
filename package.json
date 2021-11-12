@@ -1,0 +1,27 @@
+{
+  "name": "cucumber-js-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format message:./reports/report.json",
+    "test-posts": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format message:./reports/report.json --tags @Posts",
+    "test-autosaves": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format message:./reports/report.json --tags @Autosaves",
+    "test-categories": "cucumber-js --require-module @babel/register --publish-quiet --format @cucumber/pretty-formatter --format message:./reports/report.json --tags @Categories"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "chai": "^4.3.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/register": "^7.16.0",
+    "@cucumber/cucumber": "^7.3.1",
+    "@cucumber/pretty-formatter": "^1.0.0-alpha.1"
+  }
+}

@@ -1,0 +1,68 @@
+{
+    "UserById": {
+        "POST": {
+            "username": "test",
+            "email": "test@no-reply.com",
+            "password": "test",
+            "roles": ["administrator"]
+        },
+        "PUT": {
+            "description": "This is a PUT test"
+        },
+        "DELETE_USER": {
+            "data": {
+                "force": "true",
+                "reassign": ""
+            }
+        },
+        "NEGATIVE_PUT": {
+            "nickname": "-5"
+        }
+    },
+    "Posts": {
+        "POST": {
+            "title": "My new post",
+            "status": "publish"
+        },
+        "PUT": {
+            "title": "updating"
+        },
+        "InvalidUpdate": {
+            "title": ""
+        }
+    },
+    "Autosaves": {
+        "POST": {
+            "title": "New Autosave"
+        }
+    },
+    "Categories": {
+        "POST": {
+            "name": "My new category"
+        },
+        "PUT": {
+            "name": "Category updated"
+        },
+        "DELETE_CATEGORY": {
+            "data": {
+                "force": "true",
+                "reassign": ""
+            }
+        },
+        "InvalidUpdate": {
+            "name": ""
+        }
+    },
+    "BlocksById": {
+        "POST": { 
+            "title": "Block Created",
+            "status": "publish" 
+        },
+        "DELETE_BLOCKS": {
+            "data": {
+                "force": "true",
+                "reassign": ""
+            }
+        }
+    }
+}

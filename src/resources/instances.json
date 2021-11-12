@@ -1,0 +1,16 @@
+{
+    "ValidCredentials": {
+        "baseURL": "http://192.168.33.60:4040",
+        "auth": {
+            "username": "admin",
+            "password": "zjFs aQar 2BvN KLrH ccQL Onth"
+        }
+    },
+    "InvalidCredentials": {
+        "baseURL": "http://192.168.33.60:4040",
+        "auth": {
+            "username": "noadmin",
+            "password": "noadmin"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "Authentication" : {
+        "ErrorMessage": "Not Authenticated",
+        "ErrorCode": 102
+    },
+    "InvalidInputData" : {
+        "ErrorMessage": "Invalid input Data",
+        "ErrorCode": 302
+    },
+    "EmptyContent" : {
+        "code": "empty_content",
+        "message": "Content, title, and excerpt are empty.",
+        "data": {
+            "status": 400
+        }
+    },
+    "NoRouteWasFound":{
+        "code": "rest_no_route",
+        "message": "No route was found matching the URL and request method.",
+        "data": {
+            "status": 404
+        }
+    },
+    "InvalidId": {
+        "code": "rest_post_invalid_id",
+        "message": "Invalid post ID.",
+        "data": {
+            "status": 404
+        }
+    }
+}
