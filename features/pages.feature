@@ -1,56 +1,67 @@
 @Pages
 Feature: Pages
 
-#   Background:
-#     Given I have a payload for POST
-#     And I have a payload for PUT
+    #   Background:
+    #     Given I have a payload for POST
+    #     And I have a payload for PUT
 
 
-  @CRUD
-  Scenario: A user should be able to retrieve all pages
-    Given I have valid credentials
-    When I execute a GET request to pages endpoint
-    Then the status code should be 200 OK
+    @RetrieveAll-Pages @Pages-CRUD
+    Scenario: Verify that all published pages are shown
+        Given I have valid credentials
+        When I execute a GET request to pages endpoint
+        Then the status code should be 200 OK
+        And the response should be an array
+        And a page has publish status
 
-  @DataDriven
-  Scenario: A user should be able to make CRUD requests
-    Given I have valid credentials
-    # Given I have a payload for <payload>
-    # Examples:
-    #   | payload |
-    #   | POST    |
-    #   | PUT     |
-    When I execute a <verb> request to <endpoint> endpoint
-    Then the status code should be <statusCode> <statusText>
-    Examples:
-      | verb   | endpoint   | statusCode | statusText |
-      | GET    | pages      | 200        | OK         |
-      | POST   | pages      | 201        | Created    |
-      | GET    | pages/{id} | 200        | OK         |
-      | PUT    | pages/{id} | 200        | OK         |
-      | DELETE | pages/{id} | 200        | OK         |
+    @RetrieveById-Pages @Pages-CRUD
+    Scenario: Verify that a page is shown
+        Given I have valid credentials
+        When I execute a GET request to pages/{id} endpoint
+        Then the status code should be 200 OK
+        And the response should be an object
 
-  @POST
-  Scenario: A User should be able to create a project
-    Given I have valid credentials
-    And I have a payload
-      | payload | POST |
-    When I execute a POST request to pages endpoint
-    Then the project is created
-    And the status code should be 201 Created
+    @Create-Pages @Pages-CRUD
+    Scenario Outline: Verify that a page is created
+        Given I have valid credentials
+        And I have a <payload> payload and <feature> feature
+        When I execute a POST request to pages endpoint
+        Then the status code should be 201 Created
+        And the page is created
+        And the response should be an object
+        And the page is deleted
+        Examples:
+            | payload | feature |
+            | POST    | Pages   |
 
-#   @PUT @GETDATA
-#   Scenario: A User should be able to update a project
-#     Given I have valid credentials
-#     And I have a payload
-#       | payload | PUT |
-#     When I execute a PUT request to pages/{id} endpoint
-#     Then the page is updated
-#     And the status code should be 200 OK
+    @Update-Pages @Pages-CRUD
+    Scenario Outline: Verify that a page is updated with a PUT request
+        Given I have valid credentials
+        And I have a <payload> payload and <feature> feature
+        When I execute a PUT request to pages/{id} endpoint
+        Then the status code should be 200 OK
+        And the page is updated
+        And the response should be an object
+        Examples:
+            | payload | feature |
+            | PUT     | Pages   |
 
-  @SCHEMA @GETDATA
-  Scenario: The Get request should return a valid schema
-    Given I have valid credentials
-    When I execute a GET request to pages/{id} endpoint
-    Then the page is validated
-    And the status code should be 200 OK
+    @Update-Pages @Pages-CRUD
+    Scenario Outline: Verify that a page is updated with a POST request
+        Given I have valid credentials
+        And I have a <payload> payload and <feature> feature
+        When I execute a POST request to pages/{id} endpoint
+        Then the status code should be 200 OK
+        And the page is updated
+        And the response should be an object
+        Examples:
+            | payload | feature |
+            | PUT     | Pages   |
+
+    @Delete-Pages @Pages-CRUD
+    Scenario: Verify that a page is deleted
+        Given I have valid credentials
+        When I execute a DELETE request to pages/{id} endpoint
+        Then the status code should be 200 OK
+        And the response should be an object
+        And the page is deleted

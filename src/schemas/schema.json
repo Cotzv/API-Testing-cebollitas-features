@@ -417,7 +417,6 @@
             "examples": [
                 []
             ],
-            "additionalItems": false,
             "items": {
                 "$id": "#/properties/meta/items"
             }
@@ -501,7 +500,6 @@
                             }
                         ]
                     ],
-                    "additionalItems": false,
                     "items": {
                         "$id": "#/properties/_links/properties/self/items",
                         "anyOf": [
@@ -549,7 +547,6 @@
                             }
                         ]
                     ],
-                    "additionalItems": false,
                     "items": {
                         "$id": "#/properties/_links/properties/collection/items",
                         "anyOf": [
@@ -597,7 +594,6 @@
                             }
                         ]
                     ],
-                    "additionalItems": false,
                     "items": {
                         "$id": "#/properties/_links/properties/about/items",
                         "anyOf": [
@@ -646,7 +642,6 @@
                             }
                         ]
                     ],
-                    "additionalItems": false,
                     "items": {
                         "$id": "#/properties/_links/properties/author/items",
                         "anyOf": [
@@ -707,7 +702,6 @@
                             }
                         ]
                     ],
-                    "additionalItems": false,
                     "items": {
                         "$id": "#/properties/_links/properties/replies/items",
                         "anyOf": [
@@ -768,7 +762,6 @@
                             }
                         ]
                     ],
-                    "additionalItems": false,
                     "items": {
                         "$id": "#/properties/_links/properties/version-history/items",
                         "anyOf": [
@@ -828,7 +821,6 @@
                             }
                         ]
                     ],
-                    "additionalItems": false,
                     "items": {
                         "$id": "#/properties/_links/properties/wp%3Aattachment/items",
                         "anyOf": [
@@ -878,7 +870,6 @@
                             }
                         ]
                     ],
-                    "additionalItems": false,
                     "items": {
                         "$id": "#/properties/_links/properties/curies/items",
                         "anyOf": [

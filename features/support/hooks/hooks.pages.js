@@ -4,8 +4,7 @@ import HttpRequestManager from "../../../src/common/api/http.request.manager";
 import endpoints from "../../../src/resources/endpoints.json";
 import payloads from "../../../src/resources/payloads.json";
 
-Before({ tags: "@GETDATA" }, async function () {
-    console.log(' -- BEFORE SCENARIO --');
+Before({ tags: "@RetrieveById-Pages or @Update-Pages or @Delete-Pages" }, async function () {
     let _response = ''
     await HttpRequestManager.makeRequest('POST', endpoints.pages, payloads.Pages.POST)
         .then(response => {
@@ -17,35 +16,27 @@ Before({ tags: "@GETDATA" }, async function () {
             throw error;
         })
     this.id = _response.data.id;
-    console.log(`The project ${this.id} was created`)
 });
 
-After({ tags: "@POST" }, async function () {
-    console.log(' -- AFTER SCENARIO DELETE--');
+After({ tags: "@RetrieveById-Pages" }, async function () {
     let _postId = this.id;
     await HttpRequestManager.makeRequest('DELETE', endpoints.pagesById.replace('{id}', _postId))
         .then(response => {
             expect(response.status).to.equal(200);
             expect(response.statusText).to.equal('OK');
-            console.log(`project ${_postId} deleted`);
         })
         .catch(error => {
-            console.log(error);
             throw error;
         })
 });
 
-After({ tags: "@PUT" }, async function () {
-    console.log(' -- AFTER SCENARIO DELETE--');
-    let _putId = this.id;
-    await HttpRequestManager.makeRequest('DELETE', endpoints.Pages.pagesById.replace('{id}', _putId))
+After({ tags: "@Create-Page or @Update-Pages" }, async function () {
+    await HttpRequestManager.makeRequest('DELETE', endpoints.pagesById.replace('{id}', this.id))
         .then(response => {
             expect(response.status).to.equal(200);
             expect(response.statusText).to.equal('OK');
-            console.log(`project ${_putId} deleted`);
         })
         .catch(error => {
-            console.log(error);
             throw error;
         })
 });
