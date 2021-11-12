@@ -2,9 +2,10 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from 'chai';
 import HttpRequestManager from '../../src/common/api/http.request.manager';
 import payloads from '../../src/resources/payloads.json'
+import errors from "../../src/resources/errors.json";
 
 let validCredentials = false;
-let _response = '';
+var _response = '';
 let data = '';
 let _error= '';
 
@@ -12,14 +13,17 @@ Given(/^I have valid credentials$/, function () {
     validCredentials = true;
 })
 
-Given(/^I have a (.*) And (.*)$/, async function (payload, feature) {
+Given(/^I have a (.*) payload and (.*) feature$/, async function (payload, feature) {
 
     switch(feature){
         case 'UserById':
             data = payloads.UserById[payload]
             break;
-        case 'PostsById':
-            data = payloads.PostsById[payload]
+        case 'Posts':
+            data = payloads.Posts[payload]
+            break;
+        case 'Categories':
+            data = payloads.Categories[payload]
             break;
         case 'PagesById':
             data = payloads.PagesById[payload]
@@ -28,7 +32,6 @@ Given(/^I have a (.*) And (.*)$/, async function (payload, feature) {
             data = payloads.BlocksById[payload]
             break;
     }
-
 })
 
 When(/^I execute a (.*) request to (.*) endpoint$/, { timeout: 60 * 1000 }, async function (verb, endpoint) {
@@ -42,7 +45,6 @@ When(/^I execute a (.*) request to (.*) endpoint$/, { timeout: 60 * 1000 }, asyn
     await HttpRequestManager.makeRequest(verb, _endpoint, data, validCredentials)
         .then(function (response) {
             _response = response;
-            console.log(_response.data);
         })
         .catch(function (error) {
             _error= error;
@@ -50,23 +52,23 @@ When(/^I execute a (.*) request to (.*) endpoint$/, { timeout: 60 * 1000 }, asyn
 })
 
 Then(/^the status code should be (\d+) (.*)$/, function(statusCode, statusText){
-    switch (_response.status){
-        
-        case 200|201:
-            expect(_response.status).to.equal(statusCode);
-            expect(_response.statusText).to.equal(statusText);
-            break;
-        case 404:
-            expect(_error.response.status).to.equal(statusCode);
-            expect(_error.response.statusText).to.equal(statusText);
-            expect(_error.response.data).to.equal(errors.NoRouteWasFound);
-            expect(_error.response.data).to.equal(errors.InvalidId);
-            
-            break;
+    if (_error) {
+        expect(_error.response.status).to.equal(statusCode);
+        expect(_error.response.statusText).to.equal(statusText);
+    }
+    else {
+        expect(_response.status).to.equal(statusCode);
+        expect(_response.statusText).to.equal(statusText);
     }
 })
 
-Then(/^the post is created|updated|deleted$/, function(){
+Then(/^the error code should be (.*)$/, function (errorMessage) {
+    if (_error) {
+        expect(_error.response.data.code).to.equal(errorMessage);
+    }
+})
+
+Then(/^the post|block|category is created|updated|deleted$/, function(){
     expect(_response.data.id).not.to.be.undefined
     this.id = _response.data.id;
 })

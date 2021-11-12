@@ -26,7 +26,8 @@ class HttpRequestManager {
                 return instance.delete(`${instance.defaults.baseURL}/wp-json/wp/v2/${uri}`, instance.defaults.auth)
             case "DELETE_USER":
                 return instance.delete(`${instance.defaults.baseURL}/wp-json/wp/v2/${uri}`, data, instance.defaults.auth)
-
+            case "DELETE_CATEGORY":
+                return instance.delete(`${instance.defaults.baseURL}/wp-json/wp/v2/${uri}`, data, instance.defaults.auth)
         }
     }
 }
