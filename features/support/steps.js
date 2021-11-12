@@ -91,7 +91,9 @@ Then(/^the response should be an object$/, function () {
 
 Then(/^a page has publish status$/, function () {
     if (Array.isArray(_response.data)) {
-        expect(_response.data[0].status).to.equal('publish');
+        if (_response.data.length > 0) {
+            expect(_response.data[0].status).to.equal('publish');
+        }
     } else {
         expect(_response.data.status).to.equal('publish');
     }
@@ -99,4 +101,12 @@ Then(/^a page has publish status$/, function () {
 
 Then(/^the page is validated$/, function () {
     expect(_response.data).to.be.jsonSchema(schema);
+})
+
+Then(/^the response should be an empty array$/, function () {
+    expect(_response.data.length).to.equal(0);
+})
+
+Then(/^the response should have 10 objects as maximum$/, function () {
+    expect(_response.data.length).to.be.at.most(10);
 })

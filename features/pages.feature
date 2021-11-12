@@ -1,7 +1,7 @@
 @Pages
 Feature: Pages
 
-      Background:
+    Background:
         Given I have valid credentials
 
     @RetrieveAll-Pages @Pages-CRUD
@@ -57,3 +57,16 @@ Feature: Pages
         Then the status code should be 200 OK
         And the response should be an object
         And the page is deleted
+
+    @NegativePages @GetMaximumPagesNegative
+    Scenario: Verify that the response will just have 10 objects as answer
+        When I execute a GET request to pages endpoint
+        Then the status code should be 200 OK
+        And the response should be an array
+        And the response should have 10 objects as maximum
+
+    @NegativePages @GetPagesNegative
+    Scenario: Verify that a the response will be empty array when pages published doesn't exist
+        When I execute a GET request to pages endpoint
+        Then the status code should be 200 OK
+        And the response should be an empty array
