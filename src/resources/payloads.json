@@ -4,7 +4,9 @@
             "username": "test",
             "email": "test@no-reply.com",
             "password": "test",
-            "roles": ["administrator"]
+            "roles": [
+                "administrator"
+            ]
         },
         "PUT": {
             "description": "This is a PUT test"
@@ -54,9 +56,9 @@
         }
     },
     "BlocksById": {
-        "POST": { 
+        "POST": {
             "title": "Block Created",
-            "status": "publish" 
+            "status": "publish"
         },
         "DELETE_BLOCKS": {
             "data": {
@@ -64,5 +66,59 @@
                 "reassign": ""
             }
         }
+    },
+    "Pages": {
+        "POST": {
+            "title": "Hello world {value}"
+        },
+        "PUT": {
+            "title": "Hello world {value} updated"
+        },
+        "TenPages": [
+            {
+                "title": "1 Page",
+                "status": "publish"
+            },
+            {
+                "title": "2 Page",
+                "status": "publish"
+            },
+            {
+                "title": "3 Page",
+                "status": "publish"
+            },
+            {
+                "title": "4 Page",
+                "status": "publish"
+            },
+            {
+                "title": "5 Page",
+                "status": "publish"
+            },
+            {
+                "title": "6 Page",
+                "status": "publish"
+            },
+            {
+                "title": "7 Page",
+                "status": "publish"
+            },
+            {
+                "title": "8 Page",
+                "status": "publish"
+            },
+            {
+                "title": "9 Page",
+                "status": "publish"
+            },
+            {
+                "title": "10 Page",
+                "status": "publish"
+            },
+            {
+                "title": "11 Page",
+                "status": "publish"
+            }
+        ]
     }
 }

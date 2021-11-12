@@ -7,5 +7,7 @@
     "users": "users",
     "userById": "users/{id}",
     "blocks": "blocks",
-    "blocksById": "blocks/{id}"
+    "blocksById": "blocks/{id}",
+    "pages": "pages",
+    "pagesById": "pages/{id}"
 }

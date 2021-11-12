@@ -1,0 +1,936 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "id": 11,
+            "date": "2021-11-10T01:42:52",
+            "date_gmt": "2021-11-10T01:42:52",
+            "guid": {
+                "rendered": "https://wordpress.test/?page_id=11"
+            },
+            "modified": "2021-11-10T01:42:52",
+            "modified_gmt": "2021-11-10T01:42:52",
+            "slug": "",
+            "status": "draft",
+            "type": "page",
+            "link": "https://wordpress.test/?page_id=11",
+            "title": {
+                "rendered": "Hello Test API DATE EDITED10"
+            },
+            "content": {
+                "rendered": "",
+                "protected": false
+            },
+            "excerpt": {
+                "rendered": "",
+                "protected": false
+            },
+            "author": 1,
+            "featured_media": 0,
+            "parent": 0,
+            "menu_order": 0,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "template": "",
+            "meta": [],
+            "_links": {
+                "self": [
+                    {
+                        "href": "https://wordpress.test/wp-json/wp/v2/pages/11"
+                    }
+                ],
+                "collection": [
+                    {
+                        "href": "https://wordpress.test/wp-json/wp/v2/pages"
+                    }
+                ],
+                "about": [
+                    {
+                        "href": "https://wordpress.test/wp-json/wp/v2/types/page"
+                    }
+                ],
+                "author": [
+                    {
+                        "embeddable": true,
+                        "href": "https://wordpress.test/wp-json/wp/v2/users/1"
+                    }
+                ],
+                "replies": [
+                    {
+                        "embeddable": true,
+                        "href": "https://wordpress.test/wp-json/wp/v2/comments?post=11"
+                    }
+                ],
+                "version-history": [
+                    {
+                        "count": 0,
+                        "href": "https://wordpress.test/wp-json/wp/v2/pages/11/revisions"
+                    }
+                ],
+                "wp:attachment": [
+                    {
+                        "href": "https://wordpress.test/wp-json/wp/v2/media?parent=11"
+                    }
+                ],
+                "curies": [
+                    {
+                        "name": "wp",
+                        "href": "https://api.w.org/{rel}",
+                        "templated": true
+                    }
+                ]
+            }
+        }
+    ],
+    "required": [
+        "id",
+        "date",
+        "date_gmt",
+        "guid",
+        "modified",
+        "modified_gmt",
+        "slug",
+        "status",
+        "type",
+        "link",
+        "title",
+        "content",
+        "excerpt",
+        "author",
+        "featured_media",
+        "parent",
+        "menu_order",
+        "comment_status",
+        "ping_status",
+        "template",
+        "meta",
+        "_links"
+    ],
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "integer",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                11
+            ]
+        },
+        "date": {
+            "$id": "#/properties/date",
+            "type": "string",
+            "title": "The date schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "2021-11-10T01:42:52"
+            ]
+        },
+        "date_gmt": {
+            "$id": "#/properties/date_gmt",
+            "type": "string",
+            "title": "The date_gmt schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "2021-11-10T01:42:52"
+            ]
+        },
+        "guid": {
+            "$id": "#/properties/guid",
+            "type": "object",
+            "title": "The guid schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "rendered": "https://wordpress.test/?page_id=11"
+                }
+            ],
+            "required": [
+                "rendered"
+            ],
+            "properties": {
+                "rendered": {
+                    "$id": "#/properties/guid/properties/rendered",
+                    "type": "string",
+                    "title": "The rendered schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "https://wordpress.test/?page_id=11"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "modified": {
+            "$id": "#/properties/modified",
+            "type": "string",
+            "title": "The modified schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "2021-11-10T01:42:52"
+            ]
+        },
+        "modified_gmt": {
+            "$id": "#/properties/modified_gmt",
+            "type": "string",
+            "title": "The modified_gmt schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "2021-11-10T01:42:52"
+            ]
+        },
+        "slug": {
+            "$id": "#/properties/slug",
+            "type": "string",
+            "title": "The slug schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "status": {
+            "$id": "#/properties/status",
+            "type": "string",
+            "title": "The status schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "draft"
+            ]
+        },
+        "type": {
+            "$id": "#/properties/type",
+            "type": "string",
+            "title": "The type schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "page"
+            ]
+        },
+        "link": {
+            "$id": "#/properties/link",
+            "type": "string",
+            "title": "The link schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "https://wordpress.test/?page_id=11"
+            ]
+        },
+        "title": {
+            "$id": "#/properties/title",
+            "type": "object",
+            "title": "The title schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "rendered": "Hello Test API DATE EDITED10"
+                }
+            ],
+            "required": [
+                "rendered"
+            ],
+            "properties": {
+                "rendered": {
+                    "$id": "#/properties/title/properties/rendered",
+                    "type": "string",
+                    "title": "The rendered schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Hello Test API DATE EDITED10"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "content": {
+            "$id": "#/properties/content",
+            "type": "object",
+            "title": "The content schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "rendered": "",
+                    "protected": false
+                }
+            ],
+            "required": [
+                "rendered",
+                "protected"
+            ],
+            "properties": {
+                "rendered": {
+                    "$id": "#/properties/content/properties/rendered",
+                    "type": "string",
+                    "title": "The rendered schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "protected": {
+                    "$id": "#/properties/content/properties/protected",
+                    "type": "boolean",
+                    "title": "The protected schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        false
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "excerpt": {
+            "$id": "#/properties/excerpt",
+            "type": "object",
+            "title": "The excerpt schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "rendered": "",
+                    "protected": false
+                }
+            ],
+            "required": [
+                "rendered",
+                "protected"
+            ],
+            "properties": {
+                "rendered": {
+                    "$id": "#/properties/excerpt/properties/rendered",
+                    "type": "string",
+                    "title": "The rendered schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "protected": {
+                    "$id": "#/properties/excerpt/properties/protected",
+                    "type": "boolean",
+                    "title": "The protected schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        false
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "author": {
+            "$id": "#/properties/author",
+            "type": "integer",
+            "title": "The author schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                1
+            ]
+        },
+        "featured_media": {
+            "$id": "#/properties/featured_media",
+            "type": "integer",
+            "title": "The featured_media schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0
+            ]
+        },
+        "parent": {
+            "$id": "#/properties/parent",
+            "type": "integer",
+            "title": "The parent schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0
+            ]
+        },
+        "menu_order": {
+            "$id": "#/properties/menu_order",
+            "type": "integer",
+            "title": "The menu_order schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0
+            ]
+        },
+        "comment_status": {
+            "$id": "#/properties/comment_status",
+            "type": "string",
+            "title": "The comment_status schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "closed"
+            ]
+        },
+        "ping_status": {
+            "$id": "#/properties/ping_status",
+            "type": "string",
+            "title": "The ping_status schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "closed"
+            ]
+        },
+        "template": {
+            "$id": "#/properties/template",
+            "type": "string",
+            "title": "The template schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "meta": {
+            "$id": "#/properties/meta",
+            "type": "array",
+            "title": "The meta schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                []
+            ],
+            "items": {
+                "$id": "#/properties/meta/items"
+            }
+        },
+        "_links": {
+            "$id": "#/properties/_links",
+            "type": "object",
+            "title": "The _links schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "self": [
+                        {
+                            "href": "https://wordpress.test/wp-json/wp/v2/pages/11"
+                        }
+                    ],
+                    "collection": [
+                        {
+                            "href": "https://wordpress.test/wp-json/wp/v2/pages"
+                        }
+                    ],
+                    "about": [
+                        {
+                            "href": "https://wordpress.test/wp-json/wp/v2/types/page"
+                        }
+                    ],
+                    "author": [
+                        {
+                            "embeddable": true,
+                            "href": "https://wordpress.test/wp-json/wp/v2/users/1"
+                        }
+                    ],
+                    "replies": [
+                        {
+                            "embeddable": true,
+                            "href": "https://wordpress.test/wp-json/wp/v2/comments?post=11"
+                        }
+                    ],
+                    "version-history": [
+                        {
+                            "count": 0,
+                            "href": "https://wordpress.test/wp-json/wp/v2/pages/11/revisions"
+                        }
+                    ],
+                    "wp:attachment": [
+                        {
+                            "href": "https://wordpress.test/wp-json/wp/v2/media?parent=11"
+                        }
+                    ],
+                    "curies": [
+                        {
+                            "name": "wp",
+                            "href": "https://api.w.org/{rel}",
+                            "templated": true
+                        }
+                    ]
+                }
+            ],
+            "required": [
+                "self",
+                "collection",
+                "about",
+                "author",
+                "replies",
+                "version-history",
+                "wp:attachment",
+                "curies"
+            ],
+            "properties": {
+                "self": {
+                    "$id": "#/properties/_links/properties/self",
+                    "type": "array",
+                    "title": "The self schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "href": "https://wordpress.test/wp-json/wp/v2/pages/11"
+                            }
+                        ]
+                    ],
+                    "items": {
+                        "$id": "#/properties/_links/properties/self/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/_links/properties/self/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "href": "https://wordpress.test/wp-json/wp/v2/pages/11"
+                                    }
+                                ],
+                                "required": [
+                                    "href"
+                                ],
+                                "properties": {
+                                    "href": {
+                                        "$id": "#/properties/_links/properties/self/items/anyOf/0/properties/href",
+                                        "type": "string",
+                                        "title": "The href schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "https://wordpress.test/wp-json/wp/v2/pages/11"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                },
+                "collection": {
+                    "$id": "#/properties/_links/properties/collection",
+                    "type": "array",
+                    "title": "The collection schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "href": "https://wordpress.test/wp-json/wp/v2/pages"
+                            }
+                        ]
+                    ],
+                    "items": {
+                        "$id": "#/properties/_links/properties/collection/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/_links/properties/collection/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "href": "https://wordpress.test/wp-json/wp/v2/pages"
+                                    }
+                                ],
+                                "required": [
+                                    "href"
+                                ],
+                                "properties": {
+                                    "href": {
+                                        "$id": "#/properties/_links/properties/collection/items/anyOf/0/properties/href",
+                                        "type": "string",
+                                        "title": "The href schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "https://wordpress.test/wp-json/wp/v2/pages"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                },
+                "about": {
+                    "$id": "#/properties/_links/properties/about",
+                    "type": "array",
+                    "title": "The about schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "href": "https://wordpress.test/wp-json/wp/v2/types/page"
+                            }
+                        ]
+                    ],
+                    "items": {
+                        "$id": "#/properties/_links/properties/about/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/_links/properties/about/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "href": "https://wordpress.test/wp-json/wp/v2/types/page"
+                                    }
+                                ],
+                                "required": [
+                                    "href"
+                                ],
+                                "properties": {
+                                    "href": {
+                                        "$id": "#/properties/_links/properties/about/items/anyOf/0/properties/href",
+                                        "type": "string",
+                                        "title": "The href schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "https://wordpress.test/wp-json/wp/v2/types/page"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                },
+                "author": {
+                    "$id": "#/properties/_links/properties/author",
+                    "type": "array",
+                    "title": "The author schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "embeddable": true,
+                                "href": "https://wordpress.test/wp-json/wp/v2/users/1"
+                            }
+                        ]
+                    ],
+                    "items": {
+                        "$id": "#/properties/_links/properties/author/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/_links/properties/author/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "embeddable": true,
+                                        "href": "https://wordpress.test/wp-json/wp/v2/users/1"
+                                    }
+                                ],
+                                "required": [
+                                    "embeddable",
+                                    "href"
+                                ],
+                                "properties": {
+                                    "embeddable": {
+                                        "$id": "#/properties/_links/properties/author/items/anyOf/0/properties/embeddable",
+                                        "type": "boolean",
+                                        "title": "The embeddable schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": false,
+                                        "examples": [
+                                            true
+                                        ]
+                                    },
+                                    "href": {
+                                        "$id": "#/properties/_links/properties/author/items/anyOf/0/properties/href",
+                                        "type": "string",
+                                        "title": "The href schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "https://wordpress.test/wp-json/wp/v2/users/1"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                },
+                "replies": {
+                    "$id": "#/properties/_links/properties/replies",
+                    "type": "array",
+                    "title": "The replies schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "embeddable": true,
+                                "href": "https://wordpress.test/wp-json/wp/v2/comments?post=11"
+                            }
+                        ]
+                    ],
+                    "items": {
+                        "$id": "#/properties/_links/properties/replies/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/_links/properties/replies/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "embeddable": true,
+                                        "href": "https://wordpress.test/wp-json/wp/v2/comments?post=11"
+                                    }
+                                ],
+                                "required": [
+                                    "embeddable",
+                                    "href"
+                                ],
+                                "properties": {
+                                    "embeddable": {
+                                        "$id": "#/properties/_links/properties/replies/items/anyOf/0/properties/embeddable",
+                                        "type": "boolean",
+                                        "title": "The embeddable schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": false,
+                                        "examples": [
+                                            true
+                                        ]
+                                    },
+                                    "href": {
+                                        "$id": "#/properties/_links/properties/replies/items/anyOf/0/properties/href",
+                                        "type": "string",
+                                        "title": "The href schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "https://wordpress.test/wp-json/wp/v2/comments?post=11"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                },
+                "version-history": {
+                    "$id": "#/properties/_links/properties/version-history",
+                    "type": "array",
+                    "title": "The version-history schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "count": 0,
+                                "href": "https://wordpress.test/wp-json/wp/v2/pages/11/revisions"
+                            }
+                        ]
+                    ],
+                    "items": {
+                        "$id": "#/properties/_links/properties/version-history/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/_links/properties/version-history/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "count": 0,
+                                        "href": "https://wordpress.test/wp-json/wp/v2/pages/11/revisions"
+                                    }
+                                ],
+                                "required": [
+                                    "count",
+                                    "href"
+                                ],
+                                "properties": {
+                                    "count": {
+                                        "$id": "#/properties/_links/properties/version-history/items/anyOf/0/properties/count",
+                                        "type": "integer",
+                                        "title": "The count schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0,
+                                        "examples": [
+                                            0
+                                        ]
+                                    },
+                                    "href": {
+                                        "$id": "#/properties/_links/properties/version-history/items/anyOf/0/properties/href",
+                                        "type": "string",
+                                        "title": "The href schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "https://wordpress.test/wp-json/wp/v2/pages/11/revisions"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                },
+                "wp:attachment": {
+                    "$id": "#/properties/_links/properties/wp%3Aattachment",
+                    "type": "array",
+                    "title": "The wp:attachment schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "href": "https://wordpress.test/wp-json/wp/v2/media?parent=11"
+                            }
+                        ]
+                    ],
+                    "items": {
+                        "$id": "#/properties/_links/properties/wp%3Aattachment/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/_links/properties/wp%3Aattachment/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "href": "https://wordpress.test/wp-json/wp/v2/media?parent=11"
+                                    }
+                                ],
+                                "required": [
+                                    "href"
+                                ],
+                                "properties": {
+                                    "href": {
+                                        "$id": "#/properties/_links/properties/wp%3Aattachment/items/anyOf/0/properties/href",
+                                        "type": "string",
+                                        "title": "The href schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "https://wordpress.test/wp-json/wp/v2/media?parent=11"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                },
+                "curies": {
+                    "$id": "#/properties/_links/properties/curies",
+                    "type": "array",
+                    "title": "The curies schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "name": "wp",
+                                "href": "https://api.w.org/{rel}",
+                                "templated": true
+                            }
+                        ]
+                    ],
+                    "items": {
+                        "$id": "#/properties/_links/properties/curies/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/_links/properties/curies/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "name": "wp",
+                                        "href": "https://api.w.org/{rel}",
+                                        "templated": true
+                                    }
+                                ],
+                                "required": [
+                                    "name",
+                                    "href",
+                                    "templated"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "$id": "#/properties/_links/properties/curies/items/anyOf/0/properties/name",
+                                        "type": "string",
+                                        "title": "The name schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "wp"
+                                        ]
+                                    },
+                                    "href": {
+                                        "$id": "#/properties/_links/properties/curies/items/anyOf/0/properties/href",
+                                        "type": "string",
+                                        "title": "The href schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "https://api.w.org/{rel}"
+                                        ]
+                                    },
+                                    "templated": {
+                                        "$id": "#/properties/_links/properties/curies/items/anyOf/0/properties/templated",
+                                        "type": "boolean",
+                                        "title": "The templated schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": false,
+                                        "examples": [
+                                            true
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}
